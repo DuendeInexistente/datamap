@@ -1,0 +1,5 @@
+basalt_deltas
+crimson_forest
+nether_wastes
+soul_sand_valley
+warped_forest
