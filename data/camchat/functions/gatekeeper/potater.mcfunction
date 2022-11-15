@@ -1,0 +1,1 @@
+tellraw @a ["",{"text":"He's "},{"text":"south","color":"green","hoverEvent":{"action":"show_text","contents":"Check your compass!"}},{"text":" of here"}]
