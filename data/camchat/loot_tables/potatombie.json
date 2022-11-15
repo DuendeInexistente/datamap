@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "structure_block",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{mob_death_marker:1b,dead_mob:\"zombie\"}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
