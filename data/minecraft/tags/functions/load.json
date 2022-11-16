@@ -1,7 +1,8 @@
 {
 
     "values":[
-        "camchat:load"
+        "camchat:load",
+        "magic:load"
         ]
 
 }

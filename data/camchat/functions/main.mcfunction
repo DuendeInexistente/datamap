@@ -12,3 +12,7 @@ scoreboard players reset @a ClickVillager
 scoreboard players enable @a potatombs
 execute as @e[type=item,nbt={Item:{tag:{mob_death_marker:1b}}}] as @p run trigger potatombs
 kill @e[type=item,nbt={Item:{tag:{mob_death_marker:1b}}}]
+
+
+
+

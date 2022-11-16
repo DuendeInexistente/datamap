@@ -1,9 +1,0 @@
-Particle.spiral(
-    particle: string,
-    radius: float,
-    height: float,
-    spread: integer,
-    speed: integer = 1,
-    count: integer = 1,
-    mode: Keyword = normal
-) -> JMCFunction

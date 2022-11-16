@@ -1,0 +1,1 @@
+say "Camagic loaded!"

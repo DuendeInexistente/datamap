@@ -61,3 +61,12 @@ TODO: Also split in biomes
 
 
 fill -144 -54 375 -136 -60 375 minecraft:air replace minecraft:oak_fence
+
+
+
+
+execute if predicate camchat:fly at @s run effect give @a minecraft:levitation 1
+execute as @a[nbt={SelectedItem:{id:"minecraft:ender_pearl",Count:1b,tag:{impedingdoom:1b}}}] at @s run effect give @a[distance=..10] minecraft:blindness 1 1 true
+execute as @a[predicate=camchat:fly] at @s run effect give @s minecraft:levitation 1 255
+
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b}}] at @s run effect give @s minecraft:levitation 1 255

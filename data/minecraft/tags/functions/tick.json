@@ -1,7 +1,8 @@
 {
 
     "values":[
-        "camchat:main"
+        "camchat:main",
+        "magic:main"
         ]
 
 }
