@@ -2,7 +2,8 @@
 
     "values":[
         "camchat:load",
-        "magic:load"
+        "magic:load",
+        "timer:load"
         ]
 
 }
