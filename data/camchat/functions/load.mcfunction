@@ -4,4 +4,3 @@ scoreboard objectives setdisplay sidebar ClickVillager
 
 scoreboard objectives add potatombs trigger
 scoreboard players enable @a potatombs
-scoreboard objectives setdisplay sidebar potatombs

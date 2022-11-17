@@ -1,3 +1,3 @@
 
 
-schedule function timer:timers/10s
+schedule function timer:timers/10s 10s

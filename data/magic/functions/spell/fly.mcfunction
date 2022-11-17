@@ -7,3 +7,36 @@ execute if entity @p[x_rotation=-20..20] at @s run effect give @s minecraft:levi
 execute if entity @p[x_rotation=-80..-20] at @s run effect give @s minecraft:levitation 1 10
 execute if entity @p[x_rotation=-90..-80] at @s run effect give @s minecraft:levitation 1 30
 execute if entity @p[x_rotation=20..80] at @s run effect give @s minecraft:slow_falling 1 1
+
+
+execute if entity @s[predicate=camchat:sneaking] at @s run effect clear @s minecraft:slow_falling
+execute if entity @s[predicate=camchat:sneaking] at @s run effect give @s minecraft:levitation 1 255
+
+
+
+scoreboard objectives setdisplay sidebar flymeter
+scoreboard objectives setdisplay list flyamount
+scoreboard players enable @s flymeter
+
+
+
+scoreboard objectives add flyamount trigger
+scoreboard players enable @s flyamount
+
+
+execute if entity @p[x_rotation=90..] at @s run scoreboard players set @s flyamount 1
+execute if entity @p[x_rotation=20..80] at @s run scoreboard players set @s flyamount 2
+execute if entity @p[x_rotation=-20..20] at @s run scoreboard players set @s flyamount 3
+execute if entity @p[x_rotation=-80..-20] at @s run scoreboard players set @s flyamount 4
+execute if entity @p[x_rotation=-90..-80] at @s run scoreboard players set @s flyamount 5
+
+execute if entity @s[predicate=camchat:sneaking] at @s run scoreboard players set @s flyamount 3
+
+
+execute as @a[scores={flyamount=1}] at @s run scoreboard players remove @s flymeter 0
+execute as @a[scores={flyamount=2}] at @s run scoreboard players remove @s flymeter 5
+execute as @a[scores={flyamount=3}] at @s run scoreboard players remove @s flymeter 20
+execute as @a[scores={flyamount=4}] at @s run scoreboard players remove @s flymeter 60
+execute as @a[scores={flyamount=5}] at @s run scoreboard players remove @s flymeter 200
+
+
