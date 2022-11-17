@@ -33,3 +33,9 @@ execute as @a[scores={flyamount=4}] at @s run scoreboard players remove @s flyme
 execute as @a[scores={flyamount=5}] at @s run scoreboard players remove @s flymeter 200
 
 
+bossbar add util:fly "Flight"
+bossbar set util:fly players @p
+bossbar set util:fly visible true
+bossbar set util:fly max 20000
+execute store result bossbar util:fly value run scoreboard players get @p flymeter
+
