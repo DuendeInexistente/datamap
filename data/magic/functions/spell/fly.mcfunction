@@ -1,6 +1,12 @@
+scoreboard objectives setdisplay sidebar flymeter
+scoreboard objectives setdisplay list flyamount
+scoreboard objectives add flyamount trigger
+scoreboard players enable @s flyamount
+scoreboard players enable @s flymeter
+
+
 execute if entity @p[x_rotation=-90..90] at @s run effect clear @s minecraft:levitation
 execute if entity @p[x_rotation=-90..90] at @s run effect clear @s minecraft:slow_falling
-
 
 
 execute if entity @p[x_rotation=-20..20] at @s run effect give @s minecraft:levitation 1 255
@@ -8,20 +14,8 @@ execute if entity @p[x_rotation=-80..-20] at @s run effect give @s minecraft:lev
 execute if entity @p[x_rotation=-90..-80] at @s run effect give @s minecraft:levitation 1 30
 execute if entity @p[x_rotation=20..80] at @s run effect give @s minecraft:slow_falling 1 1
 
-
 execute if entity @s[predicate=camchat:sneaking] at @s run effect clear @s minecraft:slow_falling
 execute if entity @s[predicate=camchat:sneaking] at @s run effect give @s minecraft:levitation 1 255
-
-
-
-scoreboard objectives setdisplay sidebar flymeter
-scoreboard objectives setdisplay list flyamount
-scoreboard players enable @s flymeter
-
-
-
-scoreboard objectives add flyamount trigger
-scoreboard players enable @s flyamount
 
 
 execute if entity @p[x_rotation=90..] at @s run scoreboard players set @s flyamount 1
@@ -29,7 +23,6 @@ execute if entity @p[x_rotation=20..80] at @s run scoreboard players set @s flya
 execute if entity @p[x_rotation=-20..20] at @s run scoreboard players set @s flyamount 3
 execute if entity @p[x_rotation=-80..-20] at @s run scoreboard players set @s flyamount 4
 execute if entity @p[x_rotation=-90..-80] at @s run scoreboard players set @s flyamount 5
-
 execute if entity @s[predicate=camchat:sneaking] at @s run scoreboard players set @s flyamount 3
 
 

@@ -2,8 +2,7 @@
 
     "values":[
         "camchat:main",
-        "magic:main",
-        "timer:main"
+        "magic:main"
         ]
 
 }
