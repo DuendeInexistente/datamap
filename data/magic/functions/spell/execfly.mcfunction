@@ -9,4 +9,6 @@ scoreboard players remove @a[scores={example=1..}] example 1
 
 execute as @a[scores={flymeter=1..}] at @s run function magic:spell/fly
 execute as @a[scores={flymeter=..0}] at @s run bossbar set util:fly visible false
+execute as @a[scores={flymeter=..0}] at @s run scoreboard objectives remove flyamount
+execute as @a[scores={flymeter=..0}] at @s run scoreboard objectives remove flymeter
 execute as @a[scores={flymeter=..0}] at @s run scoreboard players reset @s flymeter
