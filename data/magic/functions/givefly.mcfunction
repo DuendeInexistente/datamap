@@ -1,1 +1,1 @@
-give @p carrot_on_a_stick{display:{Name:{"text":"Example"}},RepairCost:1,Unbreakable:1b,Damage:1,CustomModelData:123456,flightspell:1b}
+give @p carrot_on_a_stick{display:{Name:{"text":"Example"}},RepairCost:1,Unbreakable:1b,Damage:1,CustomModelData:1234567,flightspell:1b}
