@@ -70,3 +70,7 @@ execute as @a[nbt={SelectedItem:{id:"minecraft:ender_pearl",Count:1b,tag:{impedi
 execute as @a[predicate=camchat:fly] at @s run effect give @s minecraft:levitation 1 255
 
 execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b}}] at @s run effect give @s minecraft:levitation 1 255
+ç
+
+
+execute as @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b}}] at @s run function magic:spell/fly
