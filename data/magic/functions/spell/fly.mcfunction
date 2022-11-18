@@ -4,16 +4,21 @@ scoreboard objectives add flyamount trigger
 scoreboard players enable @p[scores={flymeter=1..}] flyamount
 scoreboard players enable @p[scores={flymeter=1..}] flymeter
 execute if entity @s[predicate=camchat:creative] at @s run scoreboard objectives setdisplay sidebar flymeter
+scoreboard objectives setdisplay belowName flymeter
+scoreboard objectives setdisplay sidebar flyamount
 
-execute if entity @p[scores={flymeter=1..},x_rotation=90..] at @s run scoreboard players set @s flyamount 1
-execute if entity @p[scores={flymeter=1..},x_rotation=20..80] at @s run scoreboard players set @s flyamount 2
-execute if entity @p[scores={flymeter=1..},x_rotation=-20..20] at @s run scoreboard players set @s flyamount 3
-execute if entity @p[scores={flymeter=1..},x_rotation=-80..-20] at @s run scoreboard players set @s flyamount 4
-execute if entity @p[scores={flymeter=1..},x_rotation=-90..-80] at @s run scoreboard players set @s flyamount 5
-execute if entity @s[scores={flymeter=1..},predicate=camchat:sneaking] at @s run scoreboard players set @s flyamount 3
+#Basic angles
+scoreboard players set @p[scores={flymeter=1..},x_rotation=90..] flyamount 1
+scoreboard players set @p[scores={flymeter=1..},x_rotation=20..80] flyamount 2
+scoreboard players set @p[scores={flymeter=1..},x_rotation=-20..20] flyamount 3
+scoreboard players set @p[scores={flymeter=1..},x_rotation=-80..-20] flyamount 4
+scoreboard players set @p[scores={flymeter=1..},x_rotation=-90..-80] flyamount 5
 #sneaking
-execute as @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @p[scores={flymeter=1..}] run scoreboard players set @s flyamount 1
+scoreboard players set @s[scores={flymeter=1..},predicate=camchat:sneaking] flyamount 3
+
+
 #Solid block check
+execute as @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @p[scores={flymeter=1..}] run scoreboard players set @s flyamount 1
 execute as @p[scores={flymeter=1..,flyamount=..4}] at @p[scores={flymeter=1..}] if block ~ ~-2 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
 execute as @p[scores={flymeter=1..,flyamount=..4}] at @p[scores={flymeter=1..}] if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
 execute as @p[scores={flymeter=1..,flyamount=..4}] at @s unless block ~ ~-0.5 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
@@ -22,12 +27,12 @@ execute as @p[scores={flymeter=1..,flyamount=..3}] at @s unless block ~ ~-2 ~ #t
 
 
 
-execute if entity @p[scores={flymeter=1..}] run effect clear @p[scores={flymeter=1..}] minecraft:levitation
-execute if entity @p[scores={flymeter=1..}] run effect clear @p[scores={flymeter=1..}] minecraft:slow_falling
-execute if entity @p[scores={flymeter=1..,flyamount=2}] run effect give @p[scores={flymeter=1..,flyamount=2}] minecraft:slow_falling 1 1 true
-execute if entity @p[scores={flymeter=1..,flyamount=4}] run effect give @p[scores={flymeter=1..,flyamount=4}] minecraft:levitation 1 10 true
-execute if entity @p[scores={flymeter=1..,flyamount=5}] run effect give @p[scores={flymeter=1..,flyamount=5}] minecraft:levitation 1 30 true
-execute if entity @p[scores={flymeter=1..,flyamount=3}] run effect give @p[scores={flymeter=1..,flyamount=3}] minecraft:levitation 1 255 true
+effect clear @p[scores={flymeter=1..}] minecraft:levitation
+effect clear @p[scores={flymeter=1..}] minecraft:slow_falling
+effect give @p[scores={flymeter=1..,flyamount=2}] minecraft:slow_falling 1 1 true
+effect give @p[scores={flymeter=1..,flyamount=4}] minecraft:levitation 1 10 true
+effect give @p[scores={flymeter=1..,flyamount=5}] minecraft:levitation 1 30 true
+effect give @p[scores={flymeter=1..,flyamount=3}] minecraft:levitation 1 255 true
 
 
 
