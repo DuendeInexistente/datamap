@@ -17,7 +17,8 @@ execute as @p[scores={flymeter=1..},nbt={OnGround:1b}] unless block ~ ~ ~ #tagli
 execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] if block ~ ~-2 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
 execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
 execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] unless block ~ ~-0.5 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
-#execute as @p[scores={flymeter=1..}] at @s unless block ~ ~-2 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
+##Player can fly up by jumping and looking up. Is this intuitive?
+execute as @p[scores={flymeter=1..,flyamount=..3}] at @s unless block ~ ~-2 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
 
 
 
