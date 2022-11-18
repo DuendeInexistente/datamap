@@ -11,8 +11,14 @@ execute if entity @p[scores={flymeter=1..},x_rotation=-20..20] at @s run scorebo
 execute if entity @p[scores={flymeter=1..},x_rotation=-80..-20] at @s run scoreboard players set @s flyamount 4
 execute if entity @p[scores={flymeter=1..},x_rotation=-90..-80] at @s run scoreboard players set @s flyamount 5
 execute if entity @s[scores={flymeter=1..},predicate=camchat:sneaking] at @s run scoreboard players set @s flyamount 3
-execute as @p[scores={flymeter=1..},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @s run scoreboard players set @s flyamount 1
-execute as @a at @s if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
+#sneaking
+execute as @p[scores={flymeter=1..},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @p[scores={flymeter=1..}] run scoreboard players set @s flyamount 1
+#Solid block check
+execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] if block ~ ~-2 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
+execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
+execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] unless block ~ ~-0.5 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
+#execute as @p[scores={flymeter=1..}] at @s unless block ~ ~-2 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
+
 
 
 execute if entity @p[scores={flymeter=1..}] run effect clear @p[scores={flymeter=1..}] minecraft:levitation
