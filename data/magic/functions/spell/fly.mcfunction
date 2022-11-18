@@ -12,17 +12,18 @@ execute if entity @p[scores={flymeter=1..},x_rotation=-80..-20] at @s run scoreb
 execute if entity @p[scores={flymeter=1..},x_rotation=-90..-80] at @s run scoreboard players set @s flyamount 5
 execute if entity @s[scores={flymeter=1..},predicate=camchat:sneaking] at @s run scoreboard players set @s flyamount 3
 #sneaking
-execute as @p[scores={flymeter=1..},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @p[scores={flymeter=1..}] run scoreboard players set @s flyamount 1
+execute as @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @p[scores={flymeter=1..}] run scoreboard players set @s flyamount 1
 #Solid block check
-execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] if block ~ ~-2 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
-execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
-execute as @p[scores={flymeter=1..}] at @p[scores={flymeter=1..}] unless block ~ ~-0.5 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
+execute as @p[scores={flymeter=1..,flyamount=..4}] at @p[scores={flymeter=1..}] if block ~ ~-2 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
+execute as @p[scores={flymeter=1..,flyamount=..4}] at @p[scores={flymeter=1..}] if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
+execute as @p[scores={flymeter=1..,flyamount=..4}] at @s unless block ~ ~-0.5 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
 ##Player can fly up by jumping and looking up. Is this intuitive?
 execute as @p[scores={flymeter=1..,flyamount=..3}] at @s unless block ~ ~-2 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
 
 
 
 execute if entity @p[scores={flymeter=1..}] run effect clear @p[scores={flymeter=1..}] minecraft:levitation
+execute if entity @p[scores={flymeter=1..}] run effect clear @p[scores={flymeter=1..}] minecraft:slow_falling
 execute if entity @p[scores={flymeter=1..,flyamount=2}] run effect give @p[scores={flymeter=1..,flyamount=2}] minecraft:slow_falling 1 1 true
 execute if entity @p[scores={flymeter=1..,flyamount=4}] run effect give @p[scores={flymeter=1..,flyamount=4}] minecraft:levitation 1 10 true
 execute if entity @p[scores={flymeter=1..,flyamount=5}] run effect give @p[scores={flymeter=1..,flyamount=5}] minecraft:levitation 1 30 true
