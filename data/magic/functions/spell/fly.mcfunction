@@ -17,14 +17,13 @@ scoreboard players set @p[scores={flymeter=1..},x_rotation=-90..-80] flyamount 5
 scoreboard players set @s[scores={flymeter=1..},predicate=camchat:sneaking] flyamount 3
 
 
-#Solid block check
-execute as @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through at @p[scores={flymeter=1..}] run scoreboard players set @s flyamount 1
-execute as @p[scores={flymeter=1..,flyamount=..4}] at @p[scores={flymeter=1..}] if block ~ ~-2 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
-execute as @p[scores={flymeter=1..,flyamount=..4}] at @p[scores={flymeter=1..}] if block ~ ~-1 ~ #taglib:non_full at @s run scoreboard players set @s flyamount 1
-execute as @p[scores={flymeter=1..,flyamount=..4}] at @s unless block ~ ~-0.5 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
+##Solid block check
+execute unless block ~ ~ ~ #taglib:walk_through run scoreboard players set @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] flyamount 1
+execute if block ~ ~-2 ~ #taglib:non_full run scoreboard players set @p[scores={flymeter=1..,flyamount=..4}] flyamount 1
+execute if block ~ ~-1 ~ #taglib:non_full run scoreboard players set @p[scores={flymeter=1..,flyamount=..4}] flyamount 1
+execute unless block ~ ~-0.5 ~ #taglib:air run scoreboard players set @p[scores={flymeter=1..,flyamount=..4}] flyamount 1
 ##Player can fly up by jumping and looking up. Is this intuitive?
-execute as @p[scores={flymeter=1..,flyamount=..3}] at @s unless block ~ ~-2 ~ #taglib:air at @s run scoreboard players set @s flyamount 1
-
+execute unless block ~ ~-2 ~ #taglib:air run scoreboard players set @p[scores={flymeter=1..,flyamount=..3}] flyamount 1
 
 
 effect clear @p[scores={flymeter=1..}] minecraft:levitation
@@ -33,16 +32,17 @@ effect give @p[scores={flymeter=1..,flyamount=2}] minecraft:slow_falling 1 1 tru
 effect give @p[scores={flymeter=1..,flyamount=4}] minecraft:levitation 1 10 true
 effect give @p[scores={flymeter=1..,flyamount=5}] minecraft:levitation 1 30 true
 effect give @p[scores={flymeter=1..,flyamount=3}] minecraft:levitation 1 255 true
+effect give @p[scores={flymeter=1..,flyamount=3},predicate=camchat:sneaking] minecraft:speed 1 6 true
 
 
 
 
 
-execute as @p[scores={flyamount=1}] run scoreboard players remove @p[scores={flyamount=1}] flymeter 0
-execute as @p[scores={flyamount=2}] run scoreboard players remove @p[scores={flyamount=2}] flymeter 5
-execute as @p[scores={flyamount=3}] run scoreboard players remove @p[scores={flyamount=3}] flymeter 20
-execute as @p[scores={flyamount=4}] run scoreboard players remove @p[scores={flyamount=4}] flymeter 60
-execute as @p[scores={flyamount=5}] run scoreboard players remove @p[scores={flyamount=5}] flymeter 200
+scoreboard players remove @p[scores={flyamount=1}] flymeter 0
+scoreboard players remove @p[scores={flyamount=2}] flymeter 5
+scoreboard players remove @p[scores={flyamount=3}] flymeter 20
+scoreboard players remove @p[scores={flyamount=4}] flymeter 60
+scoreboard players remove @p[scores={flyamount=5}] flymeter 200
 
 
 bossbar add util:fly "Flight"
