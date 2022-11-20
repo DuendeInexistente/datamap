@@ -60,6 +60,12 @@ kill @e[type=item,nbt={Item:{tag:{mob_death_marker:1b}}}]
 TODO: Also split in biomes
 
 
+
+
+
+High enough of some stat could allow people to crawl out chimneys?
+
+
 fill -144 -54 375 -136 -60 375 minecraft:air replace minecraft:oak_fence
 
 

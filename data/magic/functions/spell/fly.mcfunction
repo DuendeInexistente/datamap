@@ -19,11 +19,11 @@ scoreboard players set @p[scores={flymeter=1..},x_rotation=-90..-80] flyamount 5
 scoreboard players set @s[scores={flymeter=1..},predicate=camchat:sneaking] flyamount 3
 ##Solid block check
 execute at @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] unless block ~ ~ ~ #taglib:walk_through run scoreboard players set @p[scores={flymeter=1..,flyamount=..4},nbt={OnGround:1b}] flyamount 1
-execute at @p[scores={flymeter=1..,flyamount=..4}] if block ~ ~-2 ~ #taglib:non_full run scoreboard players set @p[scores={flymeter=1..,flyamount=..4}] flyamount 1
-execute at @p[scores={flymeter=1..,flyamount=..4}] if block ~ ~-1 ~ #taglib:non_full run scoreboard players set @p[scores={flymeter=1..,flyamount=..4}] flyamount 1
-execute at @p[scores={flymeter=1..,flyamount=..4}] unless block ~ ~-0.5 ~ #taglib:air run scoreboard players set @p[scores={flymeter=1..,flyamount=..4}] flyamount 1
+execute at @p[scores={flymeter=1..,flyamount=..4}] if block ~ ~-2 ~ #taglib:non_full run scoreboard players set @p[distance=..0.5,scores={flymeter=1..,flyamount=..4}] flyamount 1
+execute at @p[scores={flymeter=1..,flyamount=..4}] if block ~ ~-1 ~ #taglib:non_full run scoreboard players set @p[distance=..0.5,scores={flymeter=1..,flyamount=..4}] flyamount 1
+execute at @p[scores={flymeter=1..,flyamount=..4}] unless block ~ ~-0.5 ~ #taglib:air run scoreboard players set @p[distance=..0.5,scores={flymeter=1..,flyamount=..4}] flyamount 1
 ##Player can gain flight by jumping and looking up. Is this intuitive?
-execute at @p[scores={flymeter=1..,flyamount=..3}] unless block ~ ~-2 ~ #taglib:air run scoreboard players set @p[scores={flymeter=1..,flyamount=..3}] flyamount 1
+execute at @p[scores={flymeter=1..,flyamount=..3}] unless block ~ ~-2 ~ #taglib:air run scoreboard players set @p[distance=..0.5,scores={flymeter=1..,flyamount=..3}] flyamount 1
 
 effect clear @p[scores={flymeter=1..}] minecraft:levitation
 effect clear @p[scores={flymeter=1..}] minecraft:slow_falling
