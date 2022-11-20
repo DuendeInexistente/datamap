@@ -60,6 +60,9 @@ kill @e[type=item,nbt={Item:{tag:{mob_death_marker:1b}}}]
 TODO: Also split in biomes
 
 
+TODO:Armor stands can detonate crossbow fireworks early. Use for shotgun?
+
+
 
 
 

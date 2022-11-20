@@ -1,10 +1,10 @@
 execute at @p run summon armor_stand ^ ^ ^1 {NoGravity:1b,CustomName:gonzo}
 
 scoreboard objectives add x trigger
-scoreboard players enable @a x
 scoreboard objectives add y trigger
-scoreboard players enable @a y
 scoreboard objectives add z trigger
+scoreboard players enable @a x
+scoreboard players enable @a y
 scoreboard players enable @a z
 
 scoreboard objectives setdisplay sidebar x
@@ -37,7 +37,8 @@ tellraw @a [{"score":{"name":"*","objective":"y"}}]
 tellraw @a [{"score":{"name":"*","objective":"z"}}]
 
 
-execute at @p run summon arrow ^ ^ ^1 {tag:gonzoni}
-execute as @e[type=arrow,tag=gonzoni] store result entity @s Motion[0] double 0.1 run scoreboard players get @e[type=armor_stand,tag=gonzo,limit=1] x
-execute as @e[type=arrow,tag=gonzoni] store result entity @s Motion[1] double 0.1 run scoreboard players get @e[type=armor_stand,tag=gonzo,limit=1] y
-execute as @e[type=arrow,tag=gonzoni] store result entity @s Motion[2] double 0.1 run scoreboard players get @e[type=armor_stand,tag=gonzo,limit=1] z
+execute at @p run summon arrow ^ ^ ^1 {CustomName:gonzoni}
+
+execute as @e[type=arrow,name=gonzoni] store result entity @s Motion[0] double 0.1 run scoreboard players get @e[type=armor_stand,name=gonzo,limit=1] x
+execute as @e[type=arrow,name=gonzoni] store result entity @s Motion[1] double 0.1 run scoreboard players get @e[type=armor_stand,name=gonzo,limit=1] y
+execute as @e[type=arrow,name=gonzoni] store result entity @s Motion[2] double 0.1 run scoreboard players get @e[type=armor_stand,name=gonzo,limit=1] z
