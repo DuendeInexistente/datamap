@@ -1,3 +1,4 @@
+
 scoreboard objectives add flymeter trigger
 
 scoreboard players add @a[scores={carrot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{flightspell:1b}}}] flymeter 20000
