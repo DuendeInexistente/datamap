@@ -1,7 +1,6 @@
 scoreboard objectives add flyamount trigger
 scoreboard players enable @p[scores={flymeter=1..}] flyamount
 scoreboard players enable @p[scores={flymeter=1..}] flymeter
-execute if entity @s[predicate=camchat:creative] run scoreboard objectives setdisplay sidebar flymeter
 scoreboard objectives setdisplay list flymeter
 scoreboard objectives setdisplay sidebar flyamount
 bossbar add util:fly "Flight"
