@@ -5,6 +5,7 @@
 	},
 	
 	"overrides": [
+		{"predicate": {"custom_model_data":1111111}, "model": "item/wallspell"},
 		{"predicate": {"custom_model_data":1234567}, "model": "item/flightspell2"}
 	]
 }

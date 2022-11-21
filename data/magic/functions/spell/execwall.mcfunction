@@ -17,11 +17,7 @@ execute align xyz anchored eyes at @p[scores={icewall=1}] run summon marker ^1 ^
 execute align xyz anchored eyes at @p[scores={icewall=1}] run summon marker ^-1 ^2.5 ^3 {Tags:["wall","CR"]}
 execute align xyz anchored eyes at @p[scores={icewall=1}] run summon marker ^ ^2.5 ^3 {Tags:["wall","CR"]}
 
-execute at @p[scores={icewall=1}] run schedule function magic:spell/breakwall 10t
-
-
-
-
+##Make all blocks above and below powder snow.
 execute at @p[scores={icewall=1}] positioned ~ ~3 ~ run tag @e[tag=wall,tag=CR,limit=9,distance=..2] add CRPS
 execute anchored feet at @p[scores={icewall=1}] positioned ~ ~-3 ~ run tag @e[tag=wall,tag=CR,limit=9,distance=..4] add CRPS
 
@@ -30,9 +26,10 @@ execute anchored feet at @p[scores={icewall=1}] positioned ~ ~-3 ~ run tag @e[ta
 execute at @e[tag=wall,tag=CRPS,limit=9] run fill ~ ~ ~ ~ ~ ~ powder_snow keep
 execute at @e[tag=wall,tag=CR,limit=9] run fill ~ ~ ~ ~ ~ ~ ice keep
 
-execute positioned as @p[scores={icewall=1}] run 
-playsound minecraft:block.amethyst_block.place master @p[scores={icewall=1}]
-playsound minecraft:block.amethyst_block.place master @p
+execute at @p[scores={icewall=1}] run schedule function magic:spell/breakwall 16t
+
+execute at @p[scores={icewall=1}] run playsound minecraft:block.amethyst_block.place master @p ~ ~ ~
+
 
 
 
