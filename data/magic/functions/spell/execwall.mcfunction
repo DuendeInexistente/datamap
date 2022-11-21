@@ -10,7 +10,7 @@ scoreboard objectives setdisplay sidebar icewall
 scoreboard players set @p[scores={icewall=1},x_rotation=-90..-20] facingl 5
 scoreboard players set @p[nbt={OnGround:0b},scores={icewall=1},x_rotation=20..90] facingl 6
 scoreboard players set @p[nbt={OnGround:0b},scores={icewall=1},x_rotation=20..90] facingl 6
-scoreboard players set @p[scores={flymeter=1..,flyamount=2..}] facingl 6
+scoreboard players set @p[scores={flymeter=1..,flyamount=2..,icewall=1}] facingl 7
 
 ##Facing
 execute anchored eyes at @p[scores={icewall=1,facingl=1}] run summon marker ^ ^2 ^2 {Tags:["wall","NS"]}
@@ -19,6 +19,7 @@ execute anchored eyes at @p[scores={icewall=1,facingl=3}] run summon marker ^ ^2
 execute anchored eyes at @p[scores={icewall=1,facingl=4}] run summon marker ^ ^2 ^2 {Tags:["wall","NWSE"]}
 execute anchored eyes at @p[scores={icewall=1,facingl=5}] run summon marker ~ ~1.6 ~ {Tags:["wall","UD"]}
 execute anchored eyes at @p[scores={icewall=1,facingl=6}] run summon marker ~ ~-3 ~ {Tags:["wall","UD"]}
+execute anchored eyes at @p[scores={icewall=1,facingl=7}] run summon marker ^ ^-1 ^1 {Tags:["wall","UD"]}
 
 
 execute at @p[scores={icewall=1}] run schedule function magic:spell/breakwall 70t

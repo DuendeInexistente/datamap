@@ -3,10 +3,9 @@ scoreboard players enable @p facing
 scoreboard objectives add facingl trigger
 scoreboard players enable @p facingl
 #scoreboard objectives setdisplay sidebar facing
-#scoreboard objectives setdisplay sidebar facingl
+scoreboard objectives setdisplay sidebar onground
 
-#ice
-#powder_snow
+
 #x+east
 # -west
 #y+down
